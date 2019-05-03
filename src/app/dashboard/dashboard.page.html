@@ -1,0 +1,62 @@
+<ion-content>
+
+	<div id="square" color="secondary">
+
+		<ion-grid>
+		  <ion-row>
+		    <ion-col>
+		      <div>
+		        <ion-icon name="power"></ion-icon>
+		      </div>
+		    </ion-col>
+		    <ion-col>
+		      <div>
+		       	<h1 class="text-center">MENU</h1>
+		      </div>
+
+		    </ion-col>
+		    <ion-col>
+
+		    </ion-col>
+		  </ion-row>
+		</ion-grid>
+	</div>
+
+	<div class="name">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="8" offset="2">
+					 <div class="custom-card">
+					 	<div class="active-icon"></div>
+				       	<p class="text-center"> Willian Rodríguez</p>
+				      </div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+
+	<div id="list">
+		<ion-list>
+
+		  	<ion-item (click)="showModal()" class="item md in-list ion-focusable item-label hydrated">
+		      <ion-icon color="primary" name="cash"></ion-icon>
+		      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+		        <h2>Recibos de pago</h2>
+		      </ion-label>
+		      <ion-icon name="send"></ion-icon>
+		    </ion-item>
+
+			<ion-item (click)="showModal()" class="item md in-list ion-focusable item-label hydrated">
+		      <ion-icon color="primary" name="briefcase"></ion-icon>
+		      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+		        <h2>Recibos de cestaticket</h2>
+		      </ion-label>
+		      <ion-icon name="send"></ion-icon>
+		    </ion-item>
+
+
+		</ion-list>
+	</div>
+
+
+</ion-content>

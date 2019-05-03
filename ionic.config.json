@@ -1,5 +1,7 @@
 {
   "name": "webEmpleado",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

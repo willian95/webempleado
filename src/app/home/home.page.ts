@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+	
+	constructor(private router: Router, private http: HTTP){
+
+	}
+
+	login(){
+
+		this.http.get ( url ).subscribe (data => {
+			console.log(data)
+		});
+	}
 
 }

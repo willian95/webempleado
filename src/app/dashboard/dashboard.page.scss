@@ -1,0 +1,80 @@
+.text-center{
+	text-align:center;
+}
+
+#square{
+	position: #0984e3;
+	height:30%;
+	width: 100%;
+	background-color: #0984e3;
+	position: absolute;
+	border-bottom-left-radius: 15%;
+	border-bottom-right-radius: 15%;
+}
+
+#square ion-grid{
+	margin-top: 2.5rem;
+	color: #fff;
+}
+
+#square ion-icon{
+	font-size: 22px;
+	margin-left: 16px;
+
+}
+
+.name{
+	top: 25%;
+	position:absolute;
+	width: 100%;
+}
+
+.name .custom-card{
+	background-color: #fff;
+	color: #000;
+	width: 100%;
+	border-radius: .5rem;
+	height: 52px;
+	padding-top: 1px;
+	-webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+.active-icon{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	margin-top: 19px;
+	margin-left: 13px;
+}
+
+#list{
+	margin-top: 65%;
+}
+
+#list ion-list{
+	padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#list ion-label{
+	padding: 1rem;
+}
+
+#list ion-label:first-child{
+	padding: 0rem;
+}
+
+#list ion-icon:first-child{
+	font-size: 30px;
+}
+
+#list ion-icon:last-child{
+	font-size: 17px;
+}
+
+#list .item-inner{
+	border-top: 1px solid;
+}
