@@ -6,7 +6,7 @@
 		  <ion-row>
 		    <ion-col>
 		      <div>
-		        <ion-icon name="power"></ion-icon>
+		        <ion-icon name="power" (click)="logout()"></ion-icon>
 		      </div>
 		    </ion-col>
 		    <ion-col>
@@ -28,7 +28,7 @@
 				<ion-col size="8" offset="2">
 					 <div class="custom-card">
 					 	<div class="active-icon"></div>
-				       	<p class="text-center"> Willian Rodríguez</p>
+				       	<p class="text-center"> {{ name }}</p>
 				      </div>
 				</ion-col>
 			</ion-row>
@@ -38,7 +38,7 @@
 	<div id="list">
 		<ion-list>
 
-		  	<ion-item (click)="showModal()" class="item md in-list ion-focusable item-label hydrated">
+		  	<ion-item (click)="goToRecibosPago()" class="item md in-list ion-focusable item-label hydrated">
 		      <ion-icon color="primary" name="cash"></ion-icon>
 		      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
 		        <h2>Recibos de pago</h2>
@@ -46,7 +46,7 @@
 		      <ion-icon name="send"></ion-icon>
 		    </ion-item>
 
-			<ion-item (click)="showModal()" class="item md in-list ion-focusable item-label hydrated">
+			<ion-item class="item md in-list ion-focusable item-label hydrated">
 		      <ion-icon color="primary" name="briefcase"></ion-icon>
 		      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
 		        <h2>Recibos de cestaticket</h2>

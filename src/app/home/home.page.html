@@ -30,11 +30,11 @@
 					    	<div class="input-section">
 					    		<ion-item>
 						  			<ion-label position="floating" >Cedula</ion-label>
-							  		<ion-input type="number"></ion-input>
+							  		<ion-input type="tel" [(ngModel)]="cedula" maxlength="8"></ion-input>
 								</ion-item>
 								<ion-item>
 						  			<ion-label position="floating" >Clave</ion-label>
-							  		<ion-input type="password"></ion-input>
+							  		<ion-input type="password" [(ngModel)]="password"></ion-input>
 								</ion-item>
 					    	</div>
 					  	</ion-card-content>
