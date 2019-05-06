@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HTTP } from '@ionic-native/http/ngx';
+//import { HTTP } from '@ionic-native/http/ngx';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +9,17 @@ import { HTTP } from '@ionic-native/http/ngx';
 })
 export class HomePage {
 	
-	constructor(private router: Router, private http: HTTP){
+	constructor(private router: Router){
 
 	}
 
 	login(){
 
-		this.http.get ( url ).subscribe (data => {
+		this.router.navigateByUrl('/dashboard');
+
+		/*this.http.get ( url ).subscribe (data => {
 			console.log(data)
-		});
+		});*/
 	}
 
 }
