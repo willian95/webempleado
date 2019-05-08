@@ -14,7 +14,6 @@ export class RecibosPagoPage implements OnInit {
   storage:any
   public years:Array<string> = new Array(); 
   public monthsList:Array<string>
-  public months:Observable<Array<Array<string>>>;
   selectedYear:""
   selectedMonth:""
   selectedPeriod:""
