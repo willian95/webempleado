@@ -11,16 +11,17 @@ import { ChangeDetectorRef } from '@angular/core';
 export class RecibosPagoPage implements OnInit {
 	
 	name: ""
+  months:any
   storage:any
-  public years:Array<string> = new Array(); 
+  public years:Array<any> = new Array(); 
   public monthsList:Array<string>
-  selectedYear:""
-  selectedMonth:""
-  selectedPeriod:""
-  currentYear:""
-  currentMonth:""
-  currentMonthNumber:""
-  currentDay:""
+  selectedYear:any
+  selectedMonth:any
+  selectedPeriod:any
+  currentYear:any
+  currentMonth:any
+  currentMonthNumber:any
+  currentDay:any
   
   constructor(private router: Router, public cdr: ChangeDetectorRef){ 
     this.storage = localStorage
