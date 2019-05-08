@@ -33,7 +33,7 @@ export class HomePage {
 
 	login(){
 
-		this.http.post('http://localhost:8000/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response: any) => {
+		this.http.post('http://beta-webempleadov2.vtelca.gob.ve/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response: any) => {
 			
 			if(response.error == true){
 
