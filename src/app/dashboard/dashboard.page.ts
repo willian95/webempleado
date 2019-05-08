@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
 export class DashboardPage implements OnInit {
 	
 	name:""
+  storage:any
 
   constructor(private router: Router) { 
-    this.localStorage = localStorage;
+    this.storage = localStorage;
   }
 
   ngOnInit() {
     if(localStorage.getItem('name')){
-      this.name = localStorage.getItem('name')
+      this.name = this.storage.getItem('name')
     }
   	
   }
@@ -27,7 +28,7 @@ export class DashboardPage implements OnInit {
 
   logout(){
 
-  	localStorage.setItem('name', '');
+  	this.storage.setItem('name', '');
   	this.router.navigateByUrl('/');
 
   }

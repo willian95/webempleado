@@ -14,6 +14,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
 	
+	cedula:""
+	password:""
+
 	constructor(private router: Router, private http: HttpClient, public alertController: AlertController){
 
 	}
@@ -30,7 +33,7 @@ export class HomePage {
 
 	login(){
 
-		this.http.post('http://localhost:8000/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response) => {
+		this.http.post('http://localhost:8000/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response: any) => {
 			
 			if(response.error == true){
 

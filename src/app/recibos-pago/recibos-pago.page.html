@@ -38,9 +38,51 @@
 	<div id="list">
 		<ion-list>
 
-		  	<ion-select>
+		  	<ion-item>
+			    <ion-label>Año</ion-label>
+			    <ion-select placeholder="Seleccionar" [(ngModel)]="selectedYear" (ionChange)="selectYear()">
+		      		<ion-select-option *ngFor="let year of years" value="{{ year }}">{{ year }}</ion-select-option>
+			    </ion-select>
+		  	</ion-item>
+		  	<ion-item *ngIf="selectedYear < currentYear  || selectedYear == null">
+			    <ion-label>Mes</ion-label>
+			    <ion-select placeholder="Seleccionar" [(ngModel)]="selectedMonth" (ionChange)="selectMonth()" [disabled]="selectedYear == null">
+		      		<ion-select-option *ngFor="let month of months; let i = index" value="{{ i }}" >{{ month }}</ion-select-option>
+			    </ion-select>
+		  	</ion-item>
+		  	<ion-item *ngIf="selectedYear >= currentYear">
+			    <ion-label>Mes</ion-label>
+			    <ion-select placeholder="Seleccionar" [(ngModel)]="selectedMonth" (ionChange)="selectMonth()" [disabled]="selectedYear == null">
+		      		<ng-container *ngFor="let month of months; let i = index">
+			      		<ion-select-option  value="{{ i }}"  *ngIf="i <= currentMonth">
+			      			{{ month }}
+			      		</ion-select-option>
+		      		</ng-container>
+			    </ion-select>
+		  	</ion-item>
+		  	<ion-item>
+			    <ion-label>Periodo</ion-label>
+			    <ion-select placeholder="Seleccionar" [(ngModel)]="selectedPeriod" (ionChange)="selectPeriod()" [disabled]="selectedMonth == null">
+		      		<ion-select-option value="1">Primera quincena</ion-select-option>
+		      		<ion-select-option value="2">Segunda quincena</ion-select-option>
+			    </ion-select>
+		  	</ion-item>
 
-		  	</ion-select>
+		  	<ion-grid>
+			  <ion-row>
+			    <ion-col>
+			    </ion-col>
+			    <ion-col>
+			      <div>
+			       	<ion-button color="primary" [disabled]="selectedPeriod == null">Generar</ion-button>
+			      </div>
+
+			    </ion-col>
+			    <ion-col>
+
+			    </ion-col>
+			  </ion-row>
+			</ion-grid>
 
 
 		</ion-list>
