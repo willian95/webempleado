@@ -38,10 +38,9 @@ export class MostrarReciboPage implements OnInit {
       //console.log(parseFloat(value.valsal) + parseFloat(this.sueldoNeto))
     })
 
-    console.log(this.response)
-    console.log(this.desglose)
-    console.log(this.response.datos)
-    console.log(this.sueldoNeto.toFixed(2))
+    var num = this.sueldoNeto.toFixed(2)
+    var cents = (num - Math.floor(num)).toFixed(2);
+    this.sueldoNeto = Math.floor(num).toLocaleString() + ',' + cents.split('.')[1];
 
   }
 
