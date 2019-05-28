@@ -63,8 +63,10 @@
 		  	<ion-item>
 			    <ion-label>Periodo</ion-label>
 			    <ion-select placeholder="Seleccionar" [(ngModel)]="selectedPeriod" (ionChange)="selectPeriod()" [disabled]="selectedMonth == null">
-		      		<ion-select-option value="1">Primera quincena</ion-select-option>
-		      		<ion-select-option value="2">Segunda quincena</ion-select-option>
+		      		<!--<ion-select-option value="1" ngIf="currentDay >= 15 || currentMonth > selectedMonth">Primera quincena</ion-select-option>
+		      		<ion-select-option value="2" ngIf="currentDay >= 30 || currentMonth > selectedMonth">Segunda quincena</ion-select-option>-->
+		      		<ion-select-option value="1" >Primera quincena</ion-select-option>
+		      		<ion-select-option value="2" > Segunda quincena </ion-select-option>
 			    </ion-select>
 		  	</ion-item>
 
@@ -74,7 +76,7 @@
 			    </ion-col>
 			    <ion-col>
 			      <div>
-			       	<ion-button color="primary" [disabled]="selectedPeriod == null">Generar</ion-button>
+			       	<ion-button color="primary" [disabled]="selectedPeriod == null" (click)="create()">Generar</ion-button>
 			      </div>
 
 			    </ion-col>

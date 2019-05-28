@@ -1,0 +1,82 @@
+#square{
+	height: 30%;
+    width: 100%;
+    background-color: #0984e3;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    position: absolute;
+    top: 0;
+}
+
+.white-text{
+	color:#fff;
+}
+
+.text-center{
+	text-align: center;
+	width: 100%;
+}
+
+.capitalize{
+	text-transform: capitalize;
+}
+
+.list{
+	margin-top: 100px;
+}
+
+.fs-40{
+	font-size: 40px;
+}
+
+.padding-label{
+	padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.round-button{
+	background-color: #dd2832;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    right: 50%;
+    color:#fff;
+    font-size: 20px;
+    /* margin-top: -50%; */
+    position: absolute;
+    z-index: 9;
+    -webkit-animation: slide 3s infinite; /* Safari 4.0 - 8.0 */
+  	animation: slide 3s infinite;
+}
+
+ion-list{
+	padding-bottom: 60px;
+}
+
+ion-label{
+    margin-left: 1rem;
+}
+
+/*.rounded-border-btn{
+    
+    border-radius: 5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .8rem;
+    padding-right: .8rem;
+    right: 50%;
+    position: absolute;
+    background-color: #DD2832;
+    color: #fff;
+    font-size: 20px;
+    -webkit-animation: slide 3s infinite;
+    animation: slide 3s infinite;
+
+}*/
+
+
+@keyframes slide {
+    0% {right: 50%; opacity: 0;}
+    99% {right: 40%; opacity: 1;}
+    100% {right: 50%; opacity: 0;}
+}

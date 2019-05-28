@@ -1,7 +1,15 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+import { UrlService } from '../services/url.service';
 
+import { HttpClientModule } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { catchError, tap, map } from 'rxjs/operators';
+import { DataService } from '../services/data.service';
+
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recibos-pago',
@@ -22,26 +30,36 @@ export class RecibosPagoPage implements OnInit {
   currentMonth:any
   currentMonthNumber:any
   currentDay:any
+  day:any
   
-  constructor(private router: Router, public cdr: ChangeDetectorRef){ 
+  constructor(private router: Router, public cdr: ChangeDetectorRef, private urlService: UrlService, private http: HttpClient, public alertController: AlertController, private dataService: DataService){ 
     this.storage = localStorage
+    this.name = this.storage.getItem('name')
   }
 
   ngOnInit() {
 
     var d = new Date();
-
-  	this.name = this.storage.getItem('name')
     this.currentYear = new Date().getFullYear();
     this.months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     this.currentMonth = d.getMonth();
     this.currentDay = d.getDay();
 
-    for(var i = 2014; i <= this.currentYear; i++){
+    for(var i = 2013; i <= this.currentYear; i++){
       this.years.push(i)
     }
 
   }
+
+  async presentAlert(errorMessage, type) {
+      const alert = await this.alertController.create({
+        header: type,
+        message: errorMessage,
+        buttons: ['OK']
+      });
+
+      await alert.present();
+    }
 
   selectYear(){
       
@@ -77,6 +95,42 @@ export class RecibosPagoPage implements OnInit {
   selectPeriod(){
 
     console.log(this.selectedPeriod)
+
+  }
+
+  create(){
+
+    if(this.selectedPeriod == 1){
+      this.day = 15
+    }else{
+
+      if(this.selectedMonth == 1){
+        this.day = 28
+      }else{
+        this.day = 30
+      }
+
+    }
+
+
+
+    this.http.post(this.urlService.getUrl()+'/api/recibo', {year: this.selectedYear, month: this.selectedMonth, day: this.day, cedula: this.storage.getItem('cedula')}).subscribe((response: any) => {
+      //this.presentAlert(response[0].sueper)
+
+      //console.log(response)
+
+      if(response.desglose.length <= 0){
+
+        this.presentAlert("No existen registros para esta nomina", 'Error');
+
+      }else{
+
+        this.dataService.setData(42, response);
+        this.router.navigateByUrl('/mostrar-recibo/42');
+
+      }
+
+    });
 
   }
 

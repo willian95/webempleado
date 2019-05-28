@@ -29,6 +29,9 @@ export class DashboardPage implements OnInit {
   logout(){
 
   	this.storage.setItem('name', '');
+    this.storage.setItem('cedula', '');
+    this.storage.setItem('id', '');
+
   	this.router.navigateByUrl('/');
 
   }

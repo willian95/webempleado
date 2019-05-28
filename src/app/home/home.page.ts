@@ -5,6 +5,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
+import { UrlService } from '../services/url.service';
 
 
 @Component({
@@ -16,9 +17,10 @@ export class HomePage {
 	
 	cedula:""
 	password:""
+	storage:any
 
-	constructor(private router: Router, private http: HttpClient, public alertController: AlertController){
-
+	constructor(private router: Router, private http: HttpClient, public alertController: AlertController, private urlService: UrlService){
+		this.storage = localStorage
 	}
 
 	async presentAlert(errorMessage, type) {
@@ -33,8 +35,13 @@ export class HomePage {
 
 	login(){
 
-		this.http.post('http://beta-webempleadov2.vtelca.gob.ve/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response: any) => {
-			
+		//this.storage.setItem('name', '');
+	    //this.storage.setItem('cedula', '');
+	    //this.storage.setItem('id', '');	
+	    this.storage.clear()
+
+		this.http.post(this.urlService.getUrl()+'/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response: any) => {
+
 			if(response.error == true){
 
 				this.presentAlert(response.message, 'Error')
@@ -42,12 +49,11 @@ export class HomePage {
 
 			}else{
 				localStorage.setItem('name', response.data.nombre_usuario)
+				localStorage.setItem('cedula', this.cedula)
 				this.cedula = ""
 				this.password = ""
 	        	this.router.navigateByUrl('/dashboard');
 			}
-
-			
         	
       	});
 	}

@@ -13,9 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { BsPipe } from './pipes/bs.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BsPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
