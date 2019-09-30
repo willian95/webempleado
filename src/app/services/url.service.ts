@@ -9,8 +9,9 @@ export class UrlService {
 
   getUrl(){
 
-  	return "http://beta-webempleadov2.vtelca.gob.ve"
-  	//return "http://localhost:8000";
+    return "http://192.168.200.81/webempleadov2/public"
+  	// return "http://beta-webempleadov2.vtelca.gob.ve"
+  	// return "http://localhost:8000";
 
   }
 

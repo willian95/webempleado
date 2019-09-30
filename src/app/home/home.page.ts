@@ -34,7 +34,7 @@ export class HomePage {
   	}
 
 	login(){
-
+		
 		//this.storage.setItem('name', '');
 	    //this.storage.setItem('cedula', '');
 	    //this.storage.setItem('id', '');	
@@ -42,17 +42,23 @@ export class HomePage {
 
 		this.http.post(this.urlService.getUrl()+'/api/login', {cedula: this.cedula, clave: this.password}).subscribe((response: any) => {
 
+			console.log(response)
+
 			if(response.error == true){
 
 				this.presentAlert(response.message, 'Error')
 				this.password = ""
 
 			}else{
-				localStorage.setItem('name', response.data.nombre_usuario)
+				//console.log(response.data)
+				localStorage.setItem('name', response.nombre_usuario)
 				localStorage.setItem('cedula', this.cedula)
+				localStorage.setItem('ingreso', response.annio_ingreso)
 				this.cedula = ""
 				this.password = ""
-	        	this.router.navigateByUrl('/dashboard');
+				
+				if(response.redirect == true)
+					this.router.navigateByUrl('/dashboard');
 			}
         	
       	});

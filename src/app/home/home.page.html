@@ -3,14 +3,14 @@
 		
 		<ion-content>
 
-			<div class="main-div">
+			<div class="main-div"></div>
 				<div id="header">
 				
 					<ion-grid>
 				  		<ion-row>
 
-				  			<ion-col size="8" offset="2">
-				  				<img src="../assets/img/logo.png">
+				  			<ion-col size="8" offset="2" style="align-items: center; text-align: center;">
+				  				<img src="../assets/img/logo-vtelca.png" style="margin-top: -20px;">
 				  			</ion-col>
 
 				  		</ion-row>
@@ -18,31 +18,47 @@
 
 				</div>
 
-				<div id="circle">
+			<!--<div id="circle">
 				
+			</div>-->
+
+			<div class="bar">
+				<div class="ion-text-center">
+					<img src="../assets/img/icono.png" alt="" style="width: 90px; margin-top: -50px">
+					<h3 style="margin-top: -10px">Bienvenido</h3>
+				</div>
 			</div>
 
-				<div id="form">
-					<ion-card>
+			<div class="cover">
+				<div class="form-section">
 
-					  	<ion-card-content>
-					    	<h1>LOGIN</h1>
-					    	<div class="input-section">
-					    		<ion-item>
-						  			<ion-label position="floating" >Cedula</ion-label>
-							  		<ion-input type="tel" [(ngModel)]="cedula" maxlength="8"></ion-input>
-								</ion-item>
-								<ion-item>
-						  			<ion-label position="floating" >Clave</ion-label>
-							  		<ion-input type="password" [(ngModel)]="password"></ion-input>
-								</ion-item>
-					    	</div>
-					  	</ion-card-content>
+					<ion-grid>
 
-					</ion-card>
-					<button class="vtelca-button" (click)="login()">
-			    		<ion-icon name="arrow-round-forward" ></ion-icon>
-			    	</button>
+						<ion-row class="border-row">
+							<ion-col size="2">
+								<img src="../assets/img/iconousuario.png" alt="">
+							</ion-col>
+							<ion-col>
+								<ion-input  class="text-white" type="tel" [(ngModel)]="cedula" maxlength="8"></ion-input>
+							</ion-col>
+						</ion-row>
+
+						<ion-row class="border-row" style="margin-top: 10px;">
+							<ion-col size="2">
+								<img src="../assets/img/iconoclave.png" alt="">
+							</ion-col>
+							<ion-col>
+								<ion-input class="text-white" type="password" [(ngModel)]="password"></ion-input>
+							</ion-col>
+						</ion-row>
+
+						<div class="ion-text-center" style="margin-top: 20px;">
+							<button class="login-btn" (click)="login()">Ingresar</button>
+						</div>
+
+					</ion-grid>
+
+					<!--<ion-input class="custom-input" ></ion-input>-->
 				</div>
 			</div>
 

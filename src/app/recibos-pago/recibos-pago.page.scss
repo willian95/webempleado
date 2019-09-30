@@ -1,4 +1,58 @@
 #square{
+	height:30%;
+	width: 100%;
+	background-color: #0984e3;
+	position: absolute;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	background: #fff url('../../assets/img/vit-header.jpg') no-repeat center center / cover;
+}
+
+.md, .list-m, .hydrated{
+	background-color: transparent
+}
+
+#square-cover{
+	height: 185px;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.4);
+    position: absolute;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+#square ion-grid{
+	margin-top: 2.5rem;
+	color: #fff;
+}
+.rounded-image{
+	border-radius: 50%;
+	margin-left: 3px;
+	width: 90px;
+	height: 90px;
+	margin-bottom: 10px;
+	margin-bottom: 18px;
+}
+
+.rounded-circle{
+	border-radius: 50%;
+	width: 95px;
+	height: 95px;
+	background-color: rgba(150, 5, 16, 0.8);
+	margin-top: -110px;
+}
+
+#square ion-icon{
+	font-size: 22px;
+	margin-left: 16px;
+
+}
+
+.name{
+	margin-top: 11rem;
+}
+
+/*#square{
 	position: #0984e3;
 	height:30%;
 	width: 100%;
@@ -34,7 +88,7 @@
 	padding-top: 1px;
 	-webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
-}
+}*/
 
 .active-icon{
 	width: 10px;
@@ -50,8 +104,11 @@
 	text-align:center;
 }
 
-#list{
-	margin-top: 65%;
+.bg{
+	background: #fff url('../../assets/img/bg.jpg') no-repeat center center / cover;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
 }
 
 #list ion-list{
@@ -77,4 +134,12 @@
 
 #list .item-inner{
 	border-top: 1px solid;
+}
+
+#footer{
+	margin-top: 12%;
+}
+
+#footer img{
+	position: fixed;
 }

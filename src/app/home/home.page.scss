@@ -1,5 +1,62 @@
+
+
+ion-content{
+    --background: #fff url('../../assets/fondo_apk.jpg') no-repeat center center / cover;
+}
+
 #header{
 	margin-top: 40px;
+}
+
+.bar{
+	width: 100%;
+	margin-top: 20%;
+	background-color: rgba(150, 5, 16, 0.7);
+	border-bottom: 2px solid #fff;
+}
+
+.login-btn{
+	background-color: rgb(150, 5, 16);
+	margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    height: 36px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .06em;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.bar h3{
+	color: #fff;
+	font-size: 40px;
+}
+
+.cover{
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+}
+
+.form-section{
+	margin-top: 30px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 95px;
+}
+
+.border-row{
+	border: 1px solid #fff;
+	border-radius: 10px;
+}
+
+.text-white{
+	color: #fff;
 }
 
 #form{

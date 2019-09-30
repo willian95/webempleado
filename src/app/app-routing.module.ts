@@ -15,6 +15,7 @@ const routes: Routes = [
   	},
   	loadChildren: './mostrar-recibo/mostrar-recibo.module#MostrarReciboPageModule' 
   },
+  { path: 'constancia', loadChildren: './constancia/constancia.module#ConstanciaPageModule' }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-<ion-toolbar color="secondary">
+<ion-toolbar color="primary">
   <ion-buttons slot="start">
     <ion-button color="light" href="/recibos-pago">
       <ion-icon slot="icon-only" name="arrow-round-back"></ion-icon>
@@ -10,7 +10,7 @@
 	<ion-slides [options] ="sliderConfig" *ngIf="data">
 		<ion-slide>
 
-			<div style="width: 100%; position: absolute; background-color: #0984e3; height: 100px; z-index: 9999; top: 0; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem;">
+			<div style="width: 100%; position: absolute; background-color: #e74c3c; height: 100px; z-index: 9999; top: 0; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem;">
 				<h1 class="text-center" style="color: #fff;">Datos Trabajador</h1>
 			</div>
 
@@ -18,8 +18,6 @@
 			  	<ion-item >
 				    <h1 class="text-center capitalize">{{ data[0].nombres }}</h1>
 			  	</ion-item>
-
-
 
 		  		<ion-item class="item ios in-list ion-focusable item-label hydrated">
 		          <ion-icon name="business" color="primary"></ion-icon>
@@ -48,9 +46,8 @@
 
 			  	<h3 class="text-center">
 
-			        <p><ion-icon name="cash" class="fs-40"></ion-icon></p>
+			        <p style="color: #95a5a6;">Total pagado</p>
 			        <p> {{ sueldoNeto }} Bs.</p>
-			        <!--<p>{{ data[0].sueper }} Bs.</p>-->
 
 			  	</h3>
 
@@ -68,7 +65,7 @@
 		</ion-slide>
 		<ion-slide>
 
-			<div style="width: 100%; position: absolute; background-color: #0984e3; height: 100px; z-index: 9999; top: 0; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem;">
+			<div style="width: 100%; position: absolute; background-color: #e74c3c; height: 100px; z-index: 9999; top: 0; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem;">
 				<h1 class="text-center" style="color: #fff;">Asignaciones</h1>
 			</div>
 
@@ -77,7 +74,14 @@
 
 				  	<ion-item *ngIf="conceptos.nomcon && conceptos.tipsal == 'A '">
 					    <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated" >{{ conceptos.nomcon }}
-					    	<p>{{ conceptos.valsal}} BS.</p>
+					    	<p>{{ conceptos.salarioMostrar}} BS.</p>
+					    </ion-label>
+				  	</ion-item>
+			  	</div>
+			  	<div>
+			  		<ion-item>
+					    <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated" >Total
+					    	<p>{{ totalAsignaciones }} BS.</p>
 					    </ion-label>
 				  	</ion-item>
 			  	</div>
@@ -95,7 +99,7 @@
 
 		<ion-slide>
 
-			<div style="width: 100%; position: absolute; background-color: #0984e3; height: 100px; z-index: 9999; top: 0; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem;">
+			<div style="width: 100%; position: absolute; background-color: #e74c3c; height: 100px; z-index: 9999; top: 0; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem;">
 				<h1 class="text-center" style="color: #fff;">Deducciones</h1>
 			</div>
 
@@ -104,7 +108,14 @@
 
 				  	<ion-item *ngIf="conceptos.nomcon && (conceptos.tipsal == 'P1' || conceptos.tipsal == 'D ') ">
 					    <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated" >{{ conceptos.nomcon }}
-					    	<p>{{ conceptos.valsal}} BS.</p>
+					    	<p>{{ conceptos.salarioMostrar}} BS.</p>
+					    </ion-label>
+				  	</ion-item>
+			  	</div>
+			  	<div>
+			  		<ion-item>
+					    <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated" >Total
+					    	<p>{{ totalDeducciones }} BS.</p>
 					    </ion-label>
 				  	</ion-item>
 			  	</div>

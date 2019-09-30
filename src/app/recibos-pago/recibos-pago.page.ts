@@ -31,6 +31,8 @@ export class RecibosPagoPage implements OnInit {
   currentMonthNumber:any
   currentDay:any
   day:any
+  firstDate:any
+  cedula:""
   
   constructor(private router: Router, public cdr: ChangeDetectorRef, private urlService: UrlService, private http: HttpClient, public alertController: AlertController, private dataService: DataService){ 
     this.storage = localStorage
@@ -44,9 +46,16 @@ export class RecibosPagoPage implements OnInit {
     this.months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     this.currentMonth = d.getMonth();
     this.currentDay = d.getDay();
+    //.getPersonalFirstYEar()
 
-    for(var i = 2013; i <= this.currentYear; i++){
+    let startingYear = this.storage.getItem('ingreso');//this.firstDate.substring(0, 4)
+
+    for(var i = startingYear; i <= this.currentYear; i++){
       this.years.push(i)
+    }
+
+    if(localStorage.getItem('cedula')){
+      this.cedula = this.storage.getItem('cedula')
     }
 
   }
@@ -98,6 +107,17 @@ export class RecibosPagoPage implements OnInit {
 
   }
 
+  getPersonalFirstYEar(){
+
+    this.http.get(this.urlService.getUrl()+'/api/personal/first/year/'+this.storage.getItem('cedula')).subscribe((response: any) => {
+
+      this.firstDate = response.firstYear[0].fecingper
+      
+
+    });
+
+  }
+
   create(){
 
     if(this.selectedPeriod == 1){
@@ -137,6 +157,16 @@ export class RecibosPagoPage implements OnInit {
 
   goBack(){
     this.router.navigateByUrl('/dashboard');
+  }
+
+  logout(){
+
+  	this.storage.setItem('name', '');
+    this.storage.setItem('cedula', '');
+    this.storage.setItem('id', '');
+
+  	this.router.navigateByUrl('/');
+
   }
 
 

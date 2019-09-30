@@ -1,62 +1,97 @@
 <ion-content>
 
-	<div id="square" color="secondary">
+	<div class="bg"></div>
+		<div id="square" color="secondary">
+			<div id="square-cover">
+	
+				<ion-grid>
+					<ion-row style="margin-top: -40px;">
+							<ion-col>
+								<p class="text-center">
+									<img src="../assets/img/notif.png" style="width: 40px" alt="">
+								</p>
+							</ion-col>
+							<ion-col>
+									<p class="text-center">
+										<img src="../assets/img/inicio.png" style="width: 40px" alt="">
+									</p>
+							</ion-col>
+							<ion-col>
+									<p class="text-center" (click)="logout()">
+										<img src="../assets/img/cierre.png" style="width: 40px" alt="">
+									</p>
+							</ion-col>
+					</ion-row>
+	
+					<ion-row>
+	
+						<ion-col>
+							
+						</ion-col>
+						<ion-col>
+							<img class="rounded-image" src="http://salasituacional.vtelca.gob.ve/img/cedulas/{{ cedula }}.jpg" alt="">
+							<div class="rounded-circle"></div>
+						</ion-col>
+						<ion-col>
+							
+						</ion-col>
+					</ion-row>
+				</ion-grid>
+	
+			</div>
+			
+		</div>
+		
+			<ion-grid class="name">
+	
+				<ion-row>
+	
+	
+					<ion-col size="8" offset="2">
+							<h1 class="text-center"> {{ name }}</h1>
+					</ion-col>
+	
+				</ion-row>
+			</ion-grid>
+	
+		
+	
+		<div id="list">
+			<ion-list>
+	
+					<ion-item (click)="goToRecibosPago()" class="item md in-list ion-focusable item-label hydrated">
+						<img src="../assets/img/icon-recibo.png" alt="" style="width: 60px;">
+						<ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+							<h2 class="item-list">Recibos de pago <img src="../assets/img/flecha-recibo.png" style="    width: 30px;
+								margin-bottom: -9px; margin-left: 14px;"></h2>
+						</ion-label>
+					</ion-item>
+	
+				<!--<ion-item (click)="goToConstancia()" class="item md in-list ion-focusable item-label hydrated">
+						<ion-icon color="primary" name="document"></ion-icon>
+						<ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+							<h2>Constancia de trabajo</h2>
+						</ion-label>
+						<ion-icon name="download"></ion-icon>
+					</ion-item>-->
+	
+	
+			</ion-list>
+		</div>
 
-		<ion-grid>
-		  <ion-row>
-		    <ion-col>
-		      <div>
-		        <ion-icon name="power" (click)="logout()"></ion-icon>
-		      </div>
-		    </ion-col>
-		    <ion-col>
-		      <div>
-		       	<h1 class="text-center">MENU</h1>
-		      </div>
-
-		    </ion-col>
-		    <ion-col>
-
-		    </ion-col>
-		  </ion-row>
-		</ion-grid>
-	</div>
-
-	<div class="name">
-		<ion-grid>
-			<ion-row>
-				<ion-col size="8" offset="2">
-					 <div class="custom-card">
-					 	<div class="active-icon"></div>
-				       	<p class="text-center"> {{ name }}</p>
-				      </div>
-				</ion-col>
-			</ion-row>
-		</ion-grid>
-	</div>
-
-	<div id="list">
-		<ion-list>
-
-		  	<ion-item (click)="goToRecibosPago()" class="item md in-list ion-focusable item-label hydrated">
-		      <ion-icon color="primary" name="cash"></ion-icon>
-		      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
-		        <h2>Recibos de pago</h2>
-		      </ion-label>
-		      <ion-icon name="send"></ion-icon>
-		    </ion-item>
-
-			<ion-item class="item md in-list ion-focusable item-label hydrated">
-		      <ion-icon color="primary" name="document"></ion-icon>
-		      <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
-		        <h2>Constancia de trabajo</h2>
-		      </ion-label>
-		      <ion-icon name="download"></ion-icon>
-		    </ion-item>
-
-
-		</ion-list>
-	</div>
+		<div id="footer">
+			<ion-grid>
+				<ion-row style="margin-top: -40px;">
+					<ion-col>
+							
+						<p style="text-align: center;">
+							<img src="../assets/img/icono.png" style="width: 40px; margin-left: -11px;" alt="">
+						</p>
+						
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</div>
 
 
 </ion-content>
