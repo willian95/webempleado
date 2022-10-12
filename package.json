@@ -32,7 +32,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.1.0",
     "@ionic/lab": "^1.0.24",
-    "cordova-android": "7.1.4",
+    "cordova-android": "11.0.0",
     "cordova-plugin-advanced-http": "^2.0.9",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-document-viewer": "0.9.10",
